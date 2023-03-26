@@ -6,12 +6,15 @@ import org.junit.runners.Parameterized;
 import java.util.List;
 @RunWith(Parameterized.class)
 public class AnimalTest {
+
     private String animalKind;
     private List<String> expectedFoodList;
+
     public AnimalTest (String animalKind, List<String> expectedFoodList) {
         this.animalKind = animalKind;
         this.expectedFoodList = expectedFoodList;
     }
+
     @Parameterized.Parameters //
     public static Object[][] foodListByAnimalKind() {
         return new Object[][] {
@@ -26,7 +29,7 @@ public class AnimalTest {
         Assert.assertEquals(expectedFoodList, actualFoodList);
     }
     @Test
-    public void getFoodThrowsExceptionTest() throws Exception {
+    public void getFoodThrowsExceptionTest() {
         try {
             Animal animal = new Animal();
             animal.getFood("неведома зверушка");

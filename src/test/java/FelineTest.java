@@ -9,8 +9,10 @@ import org.mockito.Mockito;
 public class FelineTest {
     Feline feline = new Feline();
     Feline felineSpy  = Mockito.spy(feline);
-    private int kittensCount;
-    private int expectedKittensCount;
+
+    private final int kittensCount;
+    private final int expectedKittensCount;
+
     public FelineTest(int kittensCount, int expectedKittensCount) {
         this.kittensCount = kittensCount;
         this.expectedKittensCount = expectedKittensCount;
